@@ -4,20 +4,20 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { AboutComponent } from './about/about.component';
 import { DashboardService } from '../dashboard.service';
-
-
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
     AboutComponent,
     DashboardComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    ProjectsComponent
   ],
   imports: [
     CommonModule
   ],
-  exports: [DashboardComponent, AboutComponent, MyProfileComponent],
+  exports: [DashboardComponent, AboutComponent, MyProfileComponent, ProjectsComponent],
   // Services responsible for DB and Api calls.
-  providers: [DashboardService] 
+  providers: [DashboardService]
 })
 export class AdminModule { }
