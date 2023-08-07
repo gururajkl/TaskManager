@@ -13,4 +13,20 @@ export class ProjectsService {
   getAllProjects(): Observable<Project[]> {
     return this.httpClient.get<Project[]>("api/projects");
   }
+
+  insertProject(newProject: Project): Observable<Project> {
+    return this.httpClient.post<Project>("api/projects", newProject);
+  }
+
+  updateProject(exisitingProject: Project): Observable<Project> {
+    return this.httpClient.put<Project>("api/projects", exisitingProject);
+  }
+
+  deleteProject(projectID: number): Observable<string> {
+    return this.httpClient.delete<string>("api/projects?projectID=" + projectID);
+  }
+
+  searchProject(searchBy: string, searchText: string): Observable<Project[]> {
+    return this.httpClient.get<Project[]>("api/projects/search/" + searchBy + "/" + searchText);
+  }
 }
